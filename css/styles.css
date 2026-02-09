@@ -1,0 +1,112 @@
+/* Root variables, global background blobs, and common utilities moved here from inline <style> */
+:root {
+    --navy: #1B1B4E;
+    --coral: #FF6B4A;
+    --peach: #FFF5F0;
+    --peach-dark: #FEF0EB;
+    --blue-light: #E8F0FE;
+    --purple-light: #F0EAFF;
+    --text-body: #4A4A68;
+    /* much stronger/vivid blob colors */
+    --bg-blob-1: rgba(255,140,100,1); /* vivid warm coral */
+    --bg-blob-1-mid: rgba(255,175,140,0.95);
+    --bg-blob-1-edge: rgba(255,200,165,0.7);
+
+    --bg-blob-2: rgba(110,175,255,1); /* vivid cool blue */
+    --bg-blob-2-mid: rgba(150,200,255,0.95);
+    --bg-blob-2-edge: rgba(185,220,255,0.7);
+
+    --bg-blob-3: rgba(235,200,255,0.75); /* stronger purple wash */
+}
+
+* { font-family: 'Poppins', sans-serif; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    min-height: 100vh;
+    /* subtle off-white gradient so blobs contrast without being harsh */
+    background: linear-gradient(180deg, #fffaf8 0%, #fbfdff 100%);
+    color: var(--text-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Background blob element — fixed position div with vivid radial gradients */
+.blob-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* below everything */
+    pointer-events: none;
+    background-image:
+        radial-gradient(1200px 900px at 10% 15%, rgba(255, 200, 170, 0.6) 0%, rgba(220, 160, 130, 0.3) 45%, transparent 75%),
+        radial-gradient(900px 700px at 85% 75%, rgba(213, 227, 224, 0.6) 0%, rgba(140, 180, 220, 0.3) 45%, transparent 75%),
+        radial-gradient(750px 600px at 50% 10%, rgba(235, 190, 245, 0.55) 0%, transparent 55%);
+    filter: blur(35px);
+    mix-blend-mode: multiply;
+    opacity: 0.85;
+}
+
+/* Put content above blob-background */
+.content-layer { position: relative; z-index: 10; }
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 { color: var(--navy); }
+
+::selection { background-color: var(--coral); color: white; }
+
+@keyframes float { 0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)} }
+@keyframes float-delayed { 0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)} }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-float-delayed { animation: float-delayed 3.5s ease-in-out infinite; animation-delay: 1.5s; }
+
+.fade-in { opacity: 0; transform: translateY(30px); transition: all 0.7s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.navbar-scroll { transition: all 0.3s ease; }
+.navbar-shadow { box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+#navbar.navbar-scrolled { 
+    background-color: rgba(255, 245, 245, 0.2) !important; 
+    -webkit-backdrop-filter: blur(12px) !important; 
+    backdrop-filter: blur(12px) !important; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Keep sections visually transparent so the global background shows through */
+section { background: transparent !important; }
+
+/* Optional subtle separators for large pages */
+.section-subtle-sep { border-top: 1px solid rgba(15,23,42,0.04); border-bottom: 1px solid rgba(15,23,42,0.02); }
+.preserve-panel { background: inherit; }
+
+/* Smooth link hover effects */
+a { transition: all 0.26s ease; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #FF6B4A; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #E55A3A; }
+
+/* Image optimization */
+img { max-width: 100%; height: auto; display: block; }
+
+/* Better button styling */
+button, a.button { font-family: 'Poppins', sans-serif; cursor: pointer; border: none; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hidden.md\:flex { display: none !important; }
+    .md\:hidden { display: block !important; }
+}
+
+/* Print styles */
+@media print {
+    body { background: white; }
+    nav, footer { display: none; }
+}
+
+/* Existing additional utilities kept below (if any further customization needed) */
