@@ -17,6 +17,32 @@
     --bg-blob-2-edge: rgba(185,220,255,0.7);
 
     --bg-blob-3: rgba(235,200,255,0.75); /* stronger purple wash */
+
+    /* Additional global color variables for easy theming */
+    --bg-gradient-start: #fffaf8;
+    --bg-gradient-end: #fbfdff;
+
+    --blob-a-0: rgba(230,246,255,0.9);
+    --blob-a-1: rgba(160,200,255,0.35);
+
+    --blob-b-0: rgba(213,227,224,0.6);
+    --blob-b-1: rgba(140,180,220,0.3);
+
+    --blob-c-0: rgba(219,246,255,0.55);
+
+    --navbar-bg: rgba(255,245,245,0.2);
+    --shadow-strong: rgba(0,0,0,0.08);
+    --shadow-subtle: rgba(0,0,0,0.05);
+
+    --separator-top: rgba(15,23,42,0.04);
+    --separator-bottom: rgba(15,23,42,0.02);
+
+    --scrollbar-track: #f1f1f1;
+    --scrollbar-thumb: #2F80ED;
+    --scrollbar-thumb-hover: #0B4DA3;
+
+    --company-list: rgba(191, 206, 220, 1);
+    --surface: #F8F9FC;
 }
 
 * { font-family: 'Poppins', sans-serif; }
@@ -26,7 +52,7 @@ html { scroll-behavior: smooth; }
 body {
     min-height: 100vh;
     /* subtle off-white gradient so blobs contrast without being harsh */
-    background: linear-gradient(180deg, #fffaf8 0%, #fbfdff 100%);
+    background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
     color: var(--text-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -43,9 +69,9 @@ body {
     z-index: 0; /* below everything */
     pointer-events: none;
     background-image:
-        radial-gradient(1200px 900px at 10% 15%, rgba(230,246,255,0.9) 0%, rgba(160,200,255,0.35) 45%, transparent 75%),
-        radial-gradient(900px 700px at 85% 75%, rgba(213, 227, 224, 0.6) 0%, rgba(140, 180, 220, 0.3) 45%, transparent 75%),
-        radial-gradient(750px 600px at 50% 10%, rgba(219,246,255,0.55) 0%, transparent 55%);
+        radial-gradient(1200px 900px at 10% 15%, var(--blob-a-0) 0%, var(--blob-a-1) 45%, transparent 75%),
+        radial-gradient(900px 700px at 85% 75%, var(--blob-b-0) 0%, var(--blob-b-1) 45%, transparent 75%),
+        radial-gradient(750px 600px at 50% 10%, var(--blob-c-0) 0%, transparent 55%);
     filter: blur(35px);
     mix-blend-mode: multiply;
     opacity: 0.85;
@@ -67,19 +93,19 @@ h1,h2,h3,h4,h5,h6 { color: var(--navy); }
 .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.7s ease-out; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 .navbar-scroll { transition: all 0.3s ease; }
-.navbar-shadow { box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.navbar-shadow { box-shadow: 0 1px 3px var(--shadow-strong); }
 #navbar.navbar-scrolled { 
-    background-color: rgba(255, 245, 245, 0.2) !important; 
+    background-color: var(--navbar-bg) !important; 
     -webkit-backdrop-filter: blur(12px) !important; 
     backdrop-filter: blur(12px) !important; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px var(--shadow-subtle);
 }
 
 /* Keep sections visually transparent so the global background shows through */
 section { background: transparent !important; }
 
 /* Optional subtle separators for large pages */
-.section-subtle-sep { border-top: 1px solid rgba(15,23,42,0.04); border-bottom: 1px solid rgba(15,23,42,0.02); }
+.section-subtle-sep { border-top: 1px solid var(--separator-top); border-bottom: 1px solid var(--separator-bottom); }
 .preserve-panel { background: inherit; }
 
 /* Smooth link hover effects */
@@ -87,9 +113,9 @@ a { transition: all 0.26s ease; }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #2F80ED; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: #0B4DA3; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
 
 /* Image optimization */
 img { max-width: 100%; height: auto; display: block; }
@@ -111,5 +137,54 @@ button, a.button { font-family: 'Poppins', sans-serif; cursor: pointer; border: 
 
 /* Existing additional utilities kept below (if any further customization needed) */
 .list-companys span{
-    color: rgba(191, 206, 220, 1) !important;   /* Additional styling for company logos list */
+    color: var(--company-list) !important;   /* Additional styling for company logos list */
 }
+
+/* Map some inline Tailwind arbitrary color classes to CSS variables so
+   index.html doesn't need to be edited. These use attribute selectors
+   to match class tokens like "text-[#1B1B4E]" and apply the variable. */
+[class~="text-[#1B1B4E]"] { color: var(--navy) !important; }
+[class~="text-[#2F80ED]"] { color: var(--coral) !important; }
+[class~="hover:text-[#2F80ED]"]:hover { color: var(--coral) !important; }
+
+[class~="bg-[#2F80ED]"] { background-color: var(--coral) !important; }
+[class~="bg-[#E6F6FF]"] { background-color: var(--blob-a-0) !important; }
+[class~="bg-[#E0EAFF]"] { background-color: var(--bg-blob-2) !important; }
+[class~="bg-[#E8F0FE]"] { background-color: var(--blue-light) !important; }
+[class~="bg-[#1B1B4E]"] { background-color: var(--navy) !important; }
+[class~="bg-[#3B82F6]"] { background-color: var(--coral) !important; }
+
+[class~="text-[#4A4A68]"] { color: var(--text-body) !important; }
+[class~="bg-[#F8F9FC]"] { background-color: var(--surface) !important; }
+
+[class~="border-[#E8F0FE]"] { border-color: var(--blue-light) !important; }
+[class~="hover:border-[#2F80ED]"]:hover { border-color: var(--coral) !important; }
+
+[class~="hover:bg-[#2F80ED]"]:hover { background-color: var(--coral) !important; }
+[class~="hover:bg-[#2F80ED]"] { transition: background-color 0.2s ease; }
+
+[class~="text-[#3B82F6]"] { color: var(--coral) !important; }
+
+/* Semantic utility classes so HTML can use readable names */
+[class~="text-navy"] { color: var(--navy) !important; }
+[class~="text-coral"] { color: var(--coral) !important; }
+[class~="text-accent"] { color: var(--coral) !important; }
+[class~="text-body"] { color: var(--text-body) !important; }
+
+[class~="bg-coral"] { background-color: var(--coral) !important; }
+[class~="bg-blob-a"] { background-color: var(--blob-a-0) !important; }
+[class~="bg-blob-2"] { background-color: var(--bg-blob-2) !important; }
+[class~="bg-blue-light"] { background-color: var(--blue-light) !important; }
+[class~="bg-navy"] { background-color: var(--navy) !important; }
+[class~="bg-accent"] { background-color: var(--coral) !important; }
+[class~="bg-surface"] { background-color: var(--surface) !important; }
+
+[class~="border-blue-light"] { border-color: var(--blue-light) !important; }
+[class~="border-blob-a"] { border-color: var(--blob-a-0) !important; }
+
+[class~="fill-coral"] { fill: var(--coral) !important; }
+
+[class~="hover:text-coral"]:hover { color: var(--coral) !important; }
+[class~="hover:border-coral"]:hover { border-color: var(--coral) !important; }
+[class~="hover:bg-coral"]:hover { background-color: var(--coral) !important; }
+[class~="hover:bg-coral"] { transition: background-color 0.12s ease; }
