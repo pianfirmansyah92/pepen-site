@@ -86,9 +86,9 @@ window.addEventListener('scroll', () => {
         
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
             navbarLinks.forEach(link => {
-                link.classList.remove('text-[#FF6B4A]', 'font-bold');
+                link.classList.remove('text-[#2F80ED]', 'font-bold');
                 if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('text-[#FF6B4A]', 'font-bold');
+                    link.classList.add('text-[#2F80ED]', 'font-bold');
                 }
             });
         }
@@ -158,7 +158,7 @@ document.addEventListener('keydown', (e) => {
 // ============================================
 navbarLinks.forEach(link => {
     link.addEventListener('focus', (e) => {
-        link.style.outline = '2px solid #FF6B4A';
+        link.style.outline = '2px solid #2F80ED';
         link.style.outlineOffset = '2px';
     });
     

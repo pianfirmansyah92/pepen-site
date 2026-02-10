@@ -1,16 +1,16 @@
 /* Root variables, global background blobs, and common utilities moved here from inline <style> */
 :root {
     --navy: #1B1B4E;
-    --coral: #FF6B4A;
+    --coral: #2F80ED; /* primary blue (replacing orange) */
     --peach: #FFF5F0;
     --peach-dark: #FEF0EB;
     --blue-light: #E8F0FE;
     --purple-light: #F0EAFF;
     --text-body: #4A4A68;
     /* much stronger/vivid blob colors */
-    --bg-blob-1: rgba(255,140,100,1); /* vivid warm coral */
-    --bg-blob-1-mid: rgba(255,175,140,0.95);
-    --bg-blob-1-edge: rgba(255,200,165,0.7);
+    --bg-blob-1: rgba(47,128,237,1); /* primary blue used for warm blob replacement */
+    --bg-blob-1-mid: rgba(47,128,237,0.95);
+    --bg-blob-1-edge: rgba(47,128,237,0.7);
 
     --bg-blob-2: rgba(110,175,255,1); /* vivid cool blue */
     --bg-blob-2-mid: rgba(150,200,255,0.95);
@@ -43,9 +43,9 @@ body {
     z-index: 0; /* below everything */
     pointer-events: none;
     background-image:
-        radial-gradient(1200px 900px at 10% 15%, rgba(255, 200, 170, 0.6) 0%, rgba(220, 160, 130, 0.3) 45%, transparent 75%),
+        radial-gradient(1200px 900px at 10% 15%, rgba(230,246,255,0.9) 0%, rgba(160,200,255,0.35) 45%, transparent 75%),
         radial-gradient(900px 700px at 85% 75%, rgba(213, 227, 224, 0.6) 0%, rgba(140, 180, 220, 0.3) 45%, transparent 75%),
-        radial-gradient(750px 600px at 50% 10%, rgba(235, 190, 245, 0.55) 0%, transparent 55%);
+        radial-gradient(750px 600px at 50% 10%, rgba(219,246,255,0.55) 0%, transparent 55%);
     filter: blur(35px);
     mix-blend-mode: multiply;
     opacity: 0.85;
@@ -88,8 +88,8 @@ a { transition: all 0.26s ease; }
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #FF6B4A; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: #E55A3A; }
+::-webkit-scrollbar-thumb { background: #2F80ED; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #0B4DA3; }
 
 /* Image optimization */
 img { max-width: 100%; height: auto; display: block; }
@@ -110,3 +110,6 @@ button, a.button { font-family: 'Poppins', sans-serif; cursor: pointer; border: 
 }
 
 /* Existing additional utilities kept below (if any further customization needed) */
+.list-companys span{
+    color: rgba(191, 206, 220, 1) !important;   /* Additional styling for company logos list */
+}
