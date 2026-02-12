@@ -76,7 +76,15 @@ body {
     mix-blend-mode: multiply;
     opacity: 0.85;
 }
-
+.bg-circle-top {
+    z-index: 1;
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+    top: -7%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 100% 100%;
+}
 /* Put content above blob-background */
 .content-layer { position: relative; z-index: 10; }
 
