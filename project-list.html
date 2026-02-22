@@ -31,12 +31,12 @@
                         About
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-coral transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="project-list.html" class="text-base font-medium text-navy hover:text-coral transition-colors relative group">
-                        Project
+                    <a href="post-list.html" class="text-base font-medium text-navy hover:text-coral transition-colors relative group">
+                        Post
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-coral transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="#experience" class="text-base font-medium text-navy hover:text-coral transition-colors relative group">
-                        Experience
+                    <a href="project-list.html" class="text-base font-medium text-navy hover:text-coral transition-colors relative group">
+                        Project
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-coral transition-all group-hover:w-full"></span>
                     </a>
                 </div>
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="max-w-4xl mx-auto">
-                        <div class="space-y-6">
+                        <div class="space-y-6 card-post">
                             <!-- Project Card 1 -->
                             <article class="group bg-white rounded-2xl p-6 md:p-8 md:pb-6 border border-gray-200 shadow-sm hover:shadow-[0_20px_50px_-12px_rgba(47,128,237,0.10)] hover:-translate-y-1 transition-all duration-300 flex flex-col md:items-center justify-between">
                                 <div class="md:pr-6 flex-1">
@@ -220,8 +220,33 @@
                             
                         </div>
                     </div>
+                    <!-- Load More Button -->
+                    <div class="flex justify-center mt-12">
+                        <button id="loadMoreBtn" class="px-4 py-2 text-coral rounded-lg transition-all duration-300 text-sm font-medium flex items-center gap-2" style="border: 1px solid #2F80ED;">
+                            <span id="btnText">Load More Projects</span>
+                            <svg id="spinner" class="hidden w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </section>
+            <script>
+                const loadMoreBtn = document.getElementById('loadMoreBtn');
+                const spinner = document.getElementById('spinner');
+                const btnText = document.getElementById('btnText');
+
+                loadMoreBtn.addEventListener('click', function() {
+                    spinner.classList.remove('hidden');
+                    btnText.classList.add('hidden');
+
+                    setTimeout(() => {
+                        spinner.classList.add('hidden');
+                        btnText.classList.remove('hidden');
+                    }, 2000);
+                });
+            </script>
         </main>        
         <!-- FOOTER -->
         <footer class="bg-navy text-white pt-20 pb-10 border-t border-white/10">
