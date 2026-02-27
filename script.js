@@ -39,6 +39,38 @@ navbarLinks.forEach(link => {
 });
 
 // ============================================
+// 2.5 MOBILE MENU TOGGLE
+// ============================================
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const navMenu = document.getElementById('nav-menu');
+const navLinks = navMenu.querySelectorAll('a');
+
+let menuOpen = false;
+
+mobileMenuBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    
+    if (menuOpen) {
+        // Show menu
+        navMenu.classList.remove('max-h-0');
+        navMenu.classList.add('max-h-screen');
+    } else {
+        // Hide menu
+        navMenu.classList.remove('max-h-screen');
+        navMenu.classList.add('max-h-0');
+    }
+});
+
+// Close menu when clicking on links
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuOpen = false;
+        navMenu.classList.remove('max-h-screen');
+        navMenu.classList.add('max-h-0');
+    });
+});
+
+// ============================================
 // 3. SCROLL ANIMATION (FADE IN)
 // ============================================
 const observerOptions = {
