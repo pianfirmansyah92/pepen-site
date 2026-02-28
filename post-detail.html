@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Details – Core Platform Modernization</title>
+    <title>Dwi Vendy - Post List</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>    
@@ -11,12 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />    
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css" />
-    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
 </head>
 <body>
-    <!-- Container-aligned half-circle background highlight -->
-    <div class="bg-circle-top pointer-events-none shadow-[0_20px_50px_-12px_rgba(47,128,237,0.15)] opacity-50"></div>
+    <!-- Background blob element (fixed, behind content) -->
     <div class="blob-background"></div>
+        
     <div class="content-layer">
         <!-- NAVBAR -->
         <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-4 navbar-scroll">
@@ -59,107 +58,33 @@
             </div>
         </nav>
 
-        <main class="pt-32 pb-20 md:pt-40 md:pb-32 px-4 sm:px-6">
-            <div class="max-w-[780px] mx-auto">
-                <!-- Project Header (Hero) -->
-                <section class="mb-10 fade-in">
-                    <h1 class="text-2xl md:text-4xl font-extrabold text-navy mb-5 leading-relaxed">Core Platform Modernization</h1>
-                    <div class="flex flex-wrap items-center gap-2 mb-3">
-                        <span class="px-3 py-1 bg-blue-light rounded-full text-sm text-gray-600">Cloud Platform</span>
-                        <span class="px-3 py-1 bg-blue-light rounded-full text-sm text-gray-600">Microservices</span>
-                    </div>
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-3">
-                        <span>Role: <span class="font-semibold text-navy">Senior Software Engineer</span></span>
-                        <span>Duration: 2023 – 2024</span>
-                    </div>
-                    <p class="text-lg text-gray-600 leading-relaxed">Led the transformation of a legacy monolith into a scalable, cloud-native microservices platform. Improved reliability, deployment speed, and engineering velocity.</p>
-                </section>
-
-                <!-- Project Overview -->
-                <section class="pt-8 mb-10 fade-in">
-                    <h2 class="text-2xl font-bold text-navy mb-3 leading-relaxed">Project Overview</h2>
-                    <div class="space-y-2">
-                        <p>Core Platform Modernization was initiated to address the growing pains of a rapidly scaling SaaS product. The legacy system suffered from frequent outages, slow deployments, and limited scalability.</p>
-                        <ul class="list-disc pl-6 text-gray-700 space-y-1.5">
-                            <li><strong>Problem:</strong> Monolithic architecture causing bottlenecks and operational risk.</li>
-                            <li><strong>Objective:</strong> Enable rapid feature delivery, high availability, and seamless scaling.</li>
-                            <li><strong>Scope:</strong> Full migration to microservices, CI/CD automation, and cloud infrastructure adoption.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Highlighted Features -->
-                <section class="border-t border-black/5 pt-8 mb-10 fade-in">
-                    <h2 class="text-2xl font-bold text-navy mb-3 leading-relaxed">Highlighted Features</h2>
-                    <ul class="list-disc pl-6 text-gray-700 space-y-1.5">
-                        <li>Microservices architecture design & implementation</li>
-                        <li>Automated CI/CD pipelines (GitHub Actions, ArgoCD)</li>
-                        <li>Cloud migration (AWS, Kubernetes)</li>
-                        <li>Centralized logging & monitoring</li>
-                        <li>Zero-downtime deployments</li>
-                    </ul>
-                </section>
-
-                <!-- My Role -->
-                <section class="border-t border-black/5 pt-8 mb-10 fade-in">
-                    <h2 class="text-2xl font-bold text-navy mb-3 leading-relaxed">My Role</h2>
-                    <ul class="list-disc pl-6 text-gray-700 space-y-1.5">
-                        <li>Architected and led the migration from monolith to microservices</li>
-                        <li>Designed and implemented CI/CD pipelines</li>
-                        <li>Mentored and coordinated a team of 6 engineers</li>
-                        <li>Defined service boundaries and API contracts</li>
-                        <li>Owned cloud infrastructure setup and automation</li>
-                    </ul>
-                </section>
-
-                <!-- Tech Stack -->
-                <section class="border-t border-black/5 pt-8 fade-in mb-10">
-                    <h2 class="text-2xl font-bold text-navy mb-3 leading-relaxed">Tech Stack</h2>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-light rounded-full text-sm text-gray-600">Go</span>
-                        <span class="px-3 py-1 bg-blue-light rounded-full text-sm text-gray-600">Node.js</span>
-                        <span class="px-3 py-1 bg-blue-light rounded-full text-sm text-gray-600">Kubernetes</span>
-                        <span class="px-3 py-1 bg-blue-light rounded-full text-sm text-gray-600">AWS</span>
-                        <span class="px-3 py-1 bg-blue-light rounded-full text-sm text-gray-600">PostgreSQL</span>
-                        <span class="px-3 py-1 bg-blue-light rounded-full text-sm text-gray-600">GitHub Actions</span>
-                    </div>
-                </section>
-
-                <!-- Project Preview -->
-                <section class="border-t border-black/5 pt-8 fade-in">
-                    <h2 class="text-2xl font-bold text-navy mb-6 leading-relaxed">Project Preview</h2>
-                     <!--HTML CODE-->
-                    <div class="w-full relative">
-                        <div class="swiper default-carousel">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="https://placehold.co/800x400" alt="Slide 1" class="rounded-2xl w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://placehold.co/800x400" alt="Slide 2" class="rounded-2xl w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://placehold.co/800x400" alt="Slide 3" class="rounded-2xl w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover" />
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>    
-                </section>
-            </div>
+        <main style="min-height: 750px;">
+            <!-- Page Title Section -->
+            <section class="pt-32 pb-8 px-4 sm:px-6 fade-in">
+                <div class="max-w-5xl mx-auto">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-navy tracking-tight">
+                        Building Scalable Microservices with Go
+                    </h1>
+                    <p class="text-lg text-gray-500 mt-2">
+                        Thoughts, insights, and technical writings
+                    </p>
+                </div>
+            </section>
+            
         </main>
         <!-- FOOTER -->
         <footer class="bg-navy text-white pt-20 pb-10 border-t border-white/10">
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
                     <div class="text-center md:text-left">
-                        <a href="project-list.html" class="text-3xl font-extrabold text-white tracking-tight hover:text-coral transition-colors mb-4 block">
+                        <a href="#" class="text-3xl font-extrabold text-white tracking-tight hover:text-coral transition-colors mb-4 block">
                             Vendy<span class="text-coral">.</span>
                         </a>
                         <p class="text-gray-400 max-w-xs mx-auto md:mx-0">
                             Building digital products, brands, and experiences with passion and precision.
                         </p>
                     </div>
+
                     <div class="flex items-center space-x-6">
                         <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-coral hover:scale-110 transition-all duration-300" aria-label="GitHub">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -183,6 +108,7 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
                     <p id="year-text">© 2026 Dwi Vendy. All rights reserved.</p>
                     <p class="flex items-center gap-1">
@@ -195,10 +121,9 @@
                 </div>
             </div>
         </footer>
-
-        <!-- Custom JavaScript -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script src="script.js"></script>
     </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

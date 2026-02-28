@@ -227,3 +227,41 @@ if ('ResizeObserver' in window) {
 }
 
 console.log('Portfolio scripts loaded successfully!');
+
+
+// ============================================
+// 16. PROJECT DETAILS SHOW HIDE DIVIDER
+// ============================================
+const fixedSection = document.querySelector('.bg-circle-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= 50) {
+      // Scrolled down → hide it
+      fixedSection.style.display = 'none';
+    } else {
+      // At the top → show it
+      fixedSection.style.display = 'block';
+    }
+  });
+
+// ============================================
+// 17. CAROUSEL FUNCTIONALITY
+// ============================================
+var swiper = new Swiper(".default-carousel", {
+    loop: true,
+    speed: 700,
+    slidesPerView: 1,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+});
+
